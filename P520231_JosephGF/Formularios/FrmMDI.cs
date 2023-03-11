@@ -46,5 +46,19 @@ namespace P520231_JosephGF.Formularios
         {
 
         }
+
+        private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //control para que el formulario de gestion de usuarios se muestre
+            //solo una vez
+
+            if (!Globales.MiFormGestionUsuarios.Visible)
+            {
+                Globales.MiFormGestionUsuarios = new FrmUsuariosGestion();
+
+                Globales.MiFormGestionUsuarios.Show();
+            }
+
+        }
     }
 }

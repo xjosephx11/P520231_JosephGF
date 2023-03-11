@@ -13,6 +13,8 @@ namespace P520231_JosephGF
         //y se puede obtener aceso a ellas en la globalidad de la palicacion.
         public static Form MiFormPrincipal = new Formularios.FrmMDI();
 
+        public static Formularios.FrmUsuariosGestion MiFormGestionUsuarios
+            = new Formularios.FrmUsuariosGestion();
 
     }
 }
