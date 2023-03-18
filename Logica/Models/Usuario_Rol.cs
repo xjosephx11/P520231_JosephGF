@@ -10,7 +10,7 @@ namespace Logica.Models
     public class Usuario_Rol
     {
         public int UsuarioRolID { get; set; }
-        public int UsuarioRolDescripcion { get; set; }
+        public string UsuarioRolDescripcion { get; set; }
 
 
         public DataTable Listar() { 
