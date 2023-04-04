@@ -50,8 +50,12 @@ namespace Logica.Models
             //pasos 1.6.1 y 1.6.2
             Conexion MiCnn = new Conexion();
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Correo",this.UsuarioCorreo));
-            //todo. encrriptar la contrasenia
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", this.UsuarioContrasenia));
+            
+            //encriptar contrasenia
+            Crypto MiEncriptador = new Crypto();
+            string ContrasenniaEncriptada = MiEncriptador.EncriptarEnUnSentido(this.UsuarioContrasenia);
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", ContrasenniaEncriptada));
+
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.UsuarioNombre));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Cedula", this.UsuarioCedula));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Telefono", this.UsuarioTelefono));
@@ -78,8 +82,12 @@ namespace Logica.Models
 
             Conexion MiCnn = new Conexion();
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Correo", this.UsuarioCorreo));
-            //todo. encrriptar la contrasenia
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", this.UsuarioContrasenia));
+
+            //encriptar contrasenia
+            Crypto MiEncriptador = new Crypto();
+            string ContrasenniaEncriptada = MiEncriptador.EncriptarEnUnSentido(this.UsuarioContrasenia);
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", ContrasenniaEncriptada));
+
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.UsuarioNombre));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Cedula", this.UsuarioCedula));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Telefono", this.UsuarioTelefono));
@@ -116,6 +124,18 @@ namespace Logica.Models
             }
 
             return R;
+        }
+
+        public bool Activar() 
+        {
+            bool r = false;
+
+            //tarea: crear la funcionalidad para activar un usuario
+            //incluye este proceso, el sp y la imprementacion en el
+            //es el inverso a eliminar()
+
+
+            return r;
         }
 
         public bool ConsultarPorID()
@@ -222,7 +242,7 @@ namespace Logica.Models
             return R;
         }
 
-        public DataTable ListarActivos()
+        public DataTable ListarActivos(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
 
@@ -230,15 +250,26 @@ namespace Logica.Models
             //en este caso como el sp tiene un parametro, debemos por lo tanto ddefinir
             //ese parametro, en la listade parametros del  objeto de conexion
             MiCnn.ListaDeParametros.Add(new SqlParameter("@VerActivos", true));
+            
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
 
             R = MiCnn.EjecutarSELECT("SPUsuariosListar");
 
             return R;
         }
 
-        public DataTable ListarInactivos()
+        public DataTable ListarInactivos(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+            //en este caso como el sp tiene un parametro, debemos por lo tanto ddefinir
+            //ese parametro, en la listade parametros del  objeto de conexion
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@VerActivos", false));
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+
+            R = MiCnn.EjecutarSELECT("SPUsuariosListar");
 
             return R;
         }
