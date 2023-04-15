@@ -16,5 +16,11 @@ namespace P520231_JosephGF
         public static Formularios.FrmUsuariosGestion MiFormGestionUsuarios
             = new Formularios.FrmUsuariosGestion();
 
+        public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
+
+        public static Formularios.FrmRegistroCompra MiFormRegistroCompra = new Formularios.FrmRegistroCompra();
+
+        
+
     }
 }

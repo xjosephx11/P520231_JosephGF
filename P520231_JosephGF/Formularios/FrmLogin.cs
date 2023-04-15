@@ -50,8 +50,50 @@ namespace P520231_JosephGF.Formularios
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            //todo: se debe validar el usuario
+            //validar que se haya digitado un usuario y contrasenia
 
+            if (!string.IsNullOrEmpty(TxtEmail.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtContrasenia.Text.Trim()))
+            {
+                string usuario = TxtEmail.Text.Trim();
+                string contrasennia = TxtContrasenia.Text.Trim();
+
+                //tratar de validar que los datos digitados sean correctos
+                //en caso de que la validacion sea correcta, aplicamos los valores al usuario global
+                Globales.MiUsuarioGlobal = Globales.MiUsuarioGlobal.ValidarUsuario(usuario, contrasennia);
+
+                if (Globales.MiUsuarioGlobal.UsuarioID > 0)
+                {
+                    //si la validacion es correcta, el id deberia tener un valor mayor a 0
+                    Globales.MiFormPrincipal.Show();
+
+                    this.Hide();
+                }
+                else 
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecto, porfavor intentelo otra vez.", "Error de validacion", MessageBoxButtons.OK);
+                    TxtContrasenia.Focus();
+                    TxtContrasenia.SelectAll();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Faltan datos requeridos","Error de validacion",MessageBoxButtons.OK);
+            }
+        }
+
+        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            //al presionar cierta combinacion de teclas el boton de ingreso directo aparece
+            if (e.Shift & e.KeyCode == Keys.A)
+            {
+                //si presionamos shift = tab = a
+                BtnIngresoDirecto.Visible = true;
+            }
+        }
+
+        private void BtnIngresoDirecto_Click(object sender, EventArgs e)
+        {
             Globales.MiFormPrincipal.Show();
 
             this.Hide();
