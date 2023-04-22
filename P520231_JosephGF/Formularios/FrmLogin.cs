@@ -60,7 +60,8 @@ namespace P520231_JosephGF.Formularios
 
                 //tratar de validar que los datos digitados sean correctos
                 //en caso de que la validacion sea correcta, aplicamos los valores al usuario global
-                Globales.MiUsuarioGlobal = Globales.MiUsuarioGlobal.ValidarUsuario(usuario, contrasennia);
+                Globales.MiUsuarioGlobal = Globales.MiUsuarioGlobal.
+                    ValidarUsuario(usuario, contrasennia);
 
                 if (Globales.MiUsuarioGlobal.UsuarioID > 0)
                 {
@@ -71,14 +72,17 @@ namespace P520231_JosephGF.Formularios
                 }
                 else 
                 {
-                    MessageBox.Show("Usuario o contraseña incorrecto, porfavor intentelo otra vez.", "Error de validacion", MessageBoxButtons.OK);
+                    MessageBox.Show("Usuario o contraseña incorrecto," +
+                        " porfavor intentelo otra vez.", "Error de validacion",
+                        MessageBoxButtons.OK);
                     TxtContrasenia.Focus();
                     TxtContrasenia.SelectAll();
                 }
             }
             else 
             {
-                MessageBox.Show("Faltan datos requeridos","Error de validacion",MessageBoxButtons.OK);
+                MessageBox.Show("Faltan datos requeridos","Error de validacion",
+                    MessageBoxButtons.OK);
             }
         }
 
