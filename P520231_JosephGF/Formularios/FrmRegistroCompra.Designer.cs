@@ -45,15 +45,15 @@
             this.CCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPrecioVentaUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.BtnProductoAgregar = new System.Windows.Forms.ToolStripButton();
+            this.BtnProductoEditar = new System.Windows.Forms.ToolStripButton();
+            this.BtnProductoEliminar = new System.Windows.Forms.ToolStripButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.lbltotal = new System.Windows.Forms.Label();
             this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnCrearCompra = new System.Windows.Forms.Button();
-            this.BtnProductoAgregar = new System.Windows.Forms.ToolStripButton();
-            this.BtnProductoEditar = new System.Windows.Forms.ToolStripButton();
-            this.BtnProductoEliminar = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
@@ -228,6 +228,37 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // BtnProductoAgregar
+            // 
+            this.BtnProductoAgregar.BackColor = System.Drawing.Color.DarkGreen;
+            this.BtnProductoAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnProductoAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoAgregar.Image")));
+            this.BtnProductoAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductoAgregar.Name = "BtnProductoAgregar";
+            this.BtnProductoAgregar.Size = new System.Drawing.Size(121, 22);
+            this.BtnProductoAgregar.Text = "Agregar Producto";
+            this.BtnProductoAgregar.Click += new System.EventHandler(this.BtnProductoAgregar_Click);
+            // 
+            // BtnProductoEditar
+            // 
+            this.BtnProductoEditar.BackColor = System.Drawing.Color.Goldenrod;
+            this.BtnProductoEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEditar.Image")));
+            this.BtnProductoEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BtnProductoEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductoEditar.Name = "BtnProductoEditar";
+            this.BtnProductoEditar.Size = new System.Drawing.Size(109, 22);
+            this.BtnProductoEditar.Text = "Editar Producto";
+            // 
+            // BtnProductoEliminar
+            // 
+            this.BtnProductoEliminar.BackColor = System.Drawing.Color.Brown;
+            this.BtnProductoEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnProductoEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEliminar.Image")));
+            this.BtnProductoEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductoEliminar.Name = "BtnProductoEliminar";
+            this.BtnProductoEliminar.Size = new System.Drawing.Size(122, 22);
+            this.BtnProductoEliminar.Text = "Eliminar Producto";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.TxtTotal);
@@ -300,37 +331,7 @@
             this.BtnCrearCompra.TabIndex = 3;
             this.BtnCrearCompra.Text = "Crear Compra";
             this.BtnCrearCompra.UseVisualStyleBackColor = false;
-            // 
-            // BtnProductoAgregar
-            // 
-            this.BtnProductoAgregar.BackColor = System.Drawing.Color.DarkGreen;
-            this.BtnProductoAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnProductoAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoAgregar.Image")));
-            this.BtnProductoAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnProductoAgregar.Name = "BtnProductoAgregar";
-            this.BtnProductoAgregar.Size = new System.Drawing.Size(121, 22);
-            this.BtnProductoAgregar.Text = "Agregar Producto";
-            this.BtnProductoAgregar.Click += new System.EventHandler(this.BtnProductoAgregar_Click);
-            // 
-            // BtnProductoEditar
-            // 
-            this.BtnProductoEditar.BackColor = System.Drawing.Color.Goldenrod;
-            this.BtnProductoEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEditar.Image")));
-            this.BtnProductoEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.BtnProductoEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnProductoEditar.Name = "BtnProductoEditar";
-            this.BtnProductoEditar.Size = new System.Drawing.Size(109, 22);
-            this.BtnProductoEditar.Text = "Editar Producto";
-            // 
-            // BtnProductoEliminar
-            // 
-            this.BtnProductoEliminar.BackColor = System.Drawing.Color.Brown;
-            this.BtnProductoEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnProductoEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEliminar.Image")));
-            this.BtnProductoEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnProductoEliminar.Name = "BtnProductoEliminar";
-            this.BtnProductoEliminar.Size = new System.Drawing.Size(122, 22);
-            this.BtnProductoEliminar.Text = "Eliminar Producto";
+            this.BtnCrearCompra.Click += new System.EventHandler(this.BtnCrearCompra_Click);
             // 
             // FrmRegistroCompra
             // 
