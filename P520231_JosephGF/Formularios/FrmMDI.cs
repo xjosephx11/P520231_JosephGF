@@ -96,5 +96,14 @@ namespace P520231_JosephGF.Formularios
                 Globales.MiFormRegistroCompra.Show();
             }
         }
+
+        private void gestionDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiFromGestionProveedor.Visible)
+            {
+                Globales.MiFromGestionProveedor = new FrmProveedorGestion();
+                Globales.MiFromGestionProveedor.Show();
+            }
+        }
     }
 }

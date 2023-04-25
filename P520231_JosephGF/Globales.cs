@@ -20,7 +20,8 @@ namespace P520231_JosephGF
 
         public static Formularios.FrmRegistroCompra MiFormRegistroCompra = new Formularios.FrmRegistroCompra();
 
-        
+        public static Formularios.FrmProveedorGestion MiFromGestionProveedor
+            = new Formularios.FrmProveedorGestion();
 
     }
 }
